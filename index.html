@@ -3,8 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV de Flow</title>
+    <meta name="description" content="Découvrez le CV de Flow, alternante en BTS SIO option SISR. Explorez ses compétences, son parcours et contactez-la.">
+    <meta name="author" content="Flow">
+    <title>CV de Flow - Alternante en BTS SIO option SISR, Compétences et Parcours</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Critical CSS inline (optional for faster initial render) -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4faff;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #0066cc, #004aad);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #004aad;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #004aad;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5em; }
+        }
+        @media (max-width: 480px) {
+            header h1 { font-size: 2em; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -39,4 +91,15 @@
             <ul>
                 <li>Administration réseau et systèmes</li>
                 <li>Utilisation de WAMPserver et bases de PHP</li>
-                <li>Support technique (résolution des BSOD, gestion de tickets
+                <li>Support technique (résolution des BSOD, gestion de tickets)</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Flow. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Lazy-load scripts -->
+    <script defer src="script.js"></script>
+</body>
+</html>
