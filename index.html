@@ -8,7 +8,6 @@
     <meta name="author" content="Beruti">
     <title>CV de Chloé Beruti - Alternante en BTS SIO Systèmes et Réseaux</title>
 
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -78,28 +77,40 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Animations JavaScript -->
+    <!-- Neige Animation JavaScript -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const headers = document.querySelectorAll(".animate-header, .animate-title");
-            headers.forEach(header => {
-                header.style.opacity = 0;
-                header.style.transform = "translateY(-20px)";
-                setTimeout(() => {
-                    header.style.transition = "opacity 1s, transform 1s";
-                    header.style.opacity = 1;
-                    header.style.transform = "translateY(0)";
-                }, 200);
-            });
+            const header = document.querySelector("header");
+            const snowContainer = document.createElement("div");
+            snowContainer.style.position = "absolute";
+            snowContainer.style.top = 0;
+            snowContainer.style.left = 0;
+            snowContainer.style.width = "100%";
+            snowContainer.style.height = "100%";
+            snowContainer.style.pointerEvents = "none";
+            snowContainer.style.overflow = "hidden";
+            header.style.position = "relative";
+            header.appendChild(snowContainer);
 
-            const items = document.querySelectorAll(".list-group-item");
-            items.forEach((item, index) => {
-                item.style.opacity = 0;
-                setTimeout(() => {
-                    item.style.transition = "opacity 0.6s ease";
-                    item.style.opacity = 1;
-                }, 500 + index * 200);
-            });
+            function createSnowflake() {
+                const snowflake = document.createElement("div");
+                snowflake.style.position = "absolute";
+                snowflake.style.top = "-10px";
+                snowflake.style.left = `${Math.random() * 100}%`;
+                snowflake.style.width = "10px";
+                snowflake.style.height = "10px";
+                snowflake.style.background = "white";
+                snowflake.style.borderRadius = "50%";
+                snowflake.style.opacity = Math.random();
+                snowflake.style.animation = `fall ${3 + Math.random() * 2}s linear infinite`;
+                snowContainer.appendChild(snowflake);
+
+                snowflake.addEventListener("animationend", () => {
+                    snowflake.remove();
+                });
+            }
+
+            setInterval(createSnowflake, 200);
         });
     </script>
 </body>

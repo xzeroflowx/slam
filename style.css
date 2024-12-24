@@ -15,6 +15,8 @@ header {
     padding: 50px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Assure que les flocons ne sortent pas */
+    position: relative; /* Nécessaire pour la neige */
 }
 
 header h1 {
@@ -98,5 +100,15 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Animation des flocons de neige */
+@keyframes fall {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(100vh) translateX(-10px);
     }
 }
